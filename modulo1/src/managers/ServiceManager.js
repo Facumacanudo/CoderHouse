@@ -1,5 +1,6 @@
 import { writeFile, readFile } from "node:fs/promises";
-
+/*En ServiceManager.js, data.find(...) devuelve undefined si no hay coincidencias. 
+La consigna pide null o un mensaje de error.*/
 const REQUIRED_FIELDS = [
     "name",
     "description",
@@ -30,6 +31,11 @@ export default class ServiceManager {
     async getServiceById(idService) {
         const data = await this.getServices();
         return data.find(this.#findId(idService));
+
+            if(data.find(this.#findId(idService)) === undefined){
+                return null;
+                throw new Error(`Service with id ${idService} not found`);
+            }
     }
 
     async addService(serviceData) {
