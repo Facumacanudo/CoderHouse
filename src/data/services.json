@@ -1,0 +1,11 @@
+[
+  {
+    "id": 4,
+    "name": "Corte de pelo de paredes",
+    "description": "Corte de pelo de paredes",
+    "price": 1000,
+    "duration": 30,
+    "category": "Corte de pelo",
+    "available": true
+  }
+]
