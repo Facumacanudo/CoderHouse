@@ -1,0 +1,10 @@
+Todavía falta corregir
+La configuración se valida, pero no se carga al iniciar. env.config.js carga dotenv y valida PORT y NODE_ENV. Pero app.js no importa env.config.js. Entonces, al hacer npm start, esa validación no se ejecuta. Además, env.config.js no exporta las variables validadas para que app.js pueda usarlas.
+
+getServiceById devuelve undefined si no encuentra el servicio. En ServiceManager.js, data.find(...) devuelve undefined si no hay coincidencias. La consigna pide null o un mensaje de error.
+
+La documentación sigue pendiente. readme.md está vacío. Falta documentar instalación, ejecución, variables, el recurso services y ejemplos de los métodos. También conviene usar el nombre exacto README.md, como indica la consigna.
+
+app.js modifica el JSON automáticamente al ejecutarlo. En cada inicio agrega un servicio y luego intenta borrar el ID 4. Como el JSON actual ya tiene un servicio con ID 4, la primera ejecución agregaría uno nuevo y borraría el de ID 4. En las siguientes, seguiría agregando servicios, pero el ID 4 ya no estaría para borrar. Esto puede hacer que los datos cambien inesperadamente cada vez que usás npm start.
+
+El ejemplo de addService todavía incluye id. El método lo reemplaza porque genera su propio ID, así que no parece que el manager use ese valor externo. Sin embargo, sería más claro que el ejemplo en app.js no lo envíe, dado que la consigna dice que el ID se genera internamente.
