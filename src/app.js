@@ -10,6 +10,3 @@ const databasePath = path.join(__dirname, "data", DATABASE_NAME);
 const manager = new ServicesManager(databasePath);
 
 
-
-
-console.log("All services:", await manager.getServices());
