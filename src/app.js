@@ -9,4 +9,16 @@ const databasePath = path.join(__dirname, "data", DATABASE_NAME);
 
 const manager = new ServicesManager(databasePath);
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Anima los puntos: "Cargando", "Cargando.", "Cargando..", "Cargando..." (x2)
+for (let i = 0; i < 8; i++) {
+    process.stdout.write(`\rCargando ServiceManager${".".repeat(i % 4)}   `);
+    await sleep(200);
+}
+
+const services = await manager.getServices();
+console.log("\rCargando ServiceManager... Ok   ");
+console.log(`Servicios cargados: ${services.length}`);
+console.log(services);
 
