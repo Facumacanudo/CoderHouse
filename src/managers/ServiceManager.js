@@ -1,8 +1,6 @@
 import { writeFile, readFile } from "node:fs/promises";
  
-// Campos que forman un servicio (sin el id, que lo genera la clase).
-// Se usa para saber qué campos exigir y cuáles copiar: cualquier otro
-// campo que llegue en los datos se descarta.
+
 const SERVICE_FIELDS = [
     "name",
     "description",
@@ -27,12 +25,12 @@ const isBoolean = (value) => typeof value === "boolean";
  
 
 const corrertor = {
-    name: [stringNoEmpty, "No puede estar vacio"],
-    description: [stringNoEmpty, "No puede estar vacio"],
-    duration: [esNumPositivo, "Tiene que ser un numero positivo"],
-    price: [esNumNegativo, "Tiene que ser un numero negativo"],
-    category: [stringNoEmpty, "No puede estar vacio"],
-    available: [isBoolean, "Tiene que ser TRUE/FALSE"]
+    name: [stringNoEmpty, "no puede estar vacio"],
+    description: [stringNoEmpty, "no puede estar vacio"],
+    duration: [esNumPositivo, "tiene que ser un numero positivo"],
+    price: [esNumNegativo, "tiene que ser un numero mayor o igual a 0"],
+    category: [stringNoEmpty, "no puede estar vacio"],
+    available: [isBoolean, "tiene que ser TRUE/FALSE"]
 };
  
 export default class ServiceManager {
