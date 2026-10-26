@@ -78,7 +78,7 @@ README.md
 
 ## Recurso `services`
 
-Cada servicio tiene la siguiente estructura:
+Cada servicio tiene la siguiente estructura (valores de ejemplo):
 
 ```js
 {
