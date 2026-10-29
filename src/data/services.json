@@ -31,7 +31,7 @@
     "id": 4,
     "name": "Corte de pelo de Veron",
     "description": "Corte de pelo de Veron",
-    "duration": 0,
+    "duration": 10,
     "price": 10,
     "category": "Corte de pelo",
     "available": true
